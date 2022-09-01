@@ -40,7 +40,7 @@ function Charachters() {
     const onCharachterCardClick = ({ charachterId }) => {
         console.log(charachterId);
         if (charachterId)
-            window.location.assign(`/charachterdetails/${charachterId}`)
+            window.location.assign(`/${charachterId}`)
         /*          history.push(`/charachterdetails/${charachterId}`,{some:'state'})
          */
     }

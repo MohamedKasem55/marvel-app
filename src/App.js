@@ -31,10 +31,10 @@ function App() {
         <Navbar />
 
           <Routes>
-            <Route path={"/"} element={<Home />} />
-            <Route path={"/about"} element={<About />} />
-            <Route path={"/charachters"} element={<Charachters />} />
-            <Route path={"/charachterdetails/:id"} element={<CharachterDetails />} />
+{/*             <Route path={"/"} element={<Home />} />
+            <Route path={"/about"} element={<About />} /> */}
+            <Route path={"/"} element={<Charachters />} />
+            <Route path={"/:id"} element={<CharachterDetails />} />
           </Routes>
       </SearchItemContext.Provider>
     </Router>
