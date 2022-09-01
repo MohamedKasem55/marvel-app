@@ -56,7 +56,7 @@ function Charachters() {
                     <Loader /> :
                     <div className='row justify-content-center' >
                         {allCharachters.length !== 0 && allCharachters.map((charachter) => (
-                            <div className='col-lg-2 col-md-6 col-sm-8' key={charachter.id} >
+                            <div className='col-lg-2 col-md-6 col-sm-8 col-8' key={charachter.id} >
                                 <Card charachter={charachter} cardClickHandler={onCharachterCardClick} />
                             </div>
                         ))}

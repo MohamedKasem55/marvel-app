@@ -28,21 +28,21 @@ function CharachterDetails() {
   return (
     <div className='container' >
       <div className='row justify-content-between bg-dark py-3' >
-        <div className='col-3'>
+        <div className='col-lg-3'>
           <img
             style={{ objectFit: 'cover' }}
             src={charachter.image} alt="" />
         </div>
-        <div className='col-9' >
+        <div className='col-lg-9' >
           <h6 className='text-light' > <span>Hero Name : </span> {charachter.name}</h6>
           {charachter.description && <p className="text-light"><span>Hero Info : </span> {charachter.description}</p>}
         </div>
       </div>
       <h2>Commics:</h2>
       <div className='col-12' >
-        <div className='row' >
+        <div className='row justify-content-center' >
           {charachter.comics && charachter.comics.items.map((comic,i) => (
-            <div className='col-lg-2 col-md-6' key={i} >
+            <div className='col-lg-2 col-md-6 col-8' key={i} >
               <Card cardClickHandler={oncardClick} charachter={comic} />
             </div>
           ))}
