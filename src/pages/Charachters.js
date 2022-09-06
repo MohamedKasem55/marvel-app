@@ -3,10 +3,11 @@ import Card from '../components/Card'
 import { getAllCharachters, getCharachterByName } from '../service/HeroesService'
 import SearchItemContext from '../context/searchItemContext'
 import Loader from '../components/loader'
+import {useNavigate} from 'react-router-dom'
 function Charachters() {
     const [allCharachters, setAllCharachters] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-
+    let navigate = useNavigate();
     const searchItemCtx = useContext(SearchItemContext)
     //debouncing
     useEffect(() => {
@@ -40,14 +41,16 @@ function Charachters() {
     const onCharachterCardClick = ({ charachterId }) => {
         console.log(charachterId);
         if (charachterId)
-            window.location.assign(`/${charachterId}`)
-        /*          history.push(`/charachterdetails/${charachterId}`,{some:'state'})
+        navigate(`/${charachterId}`)
+         /*    window.location.assign(`/${charachterId}`)
+                 history.push(`/charachterdetails/${charachterId}`,{some:'state'})
          */
     }
     return (
         <div className='container' >
             <div className='col-12' >
-                {(isLoading===false&& allCharachters.length === 0 )&& <div className='row justify-content-center align-items-center' >
+                {(isLoading===false&& allCharachters.length === 0 )&& 
+                <div className='row justify-content-center align-items-center' >
                     <div className='col-6 '>
                         <Card charachter={{ name: "No Data Available" }} />
                     </div>
